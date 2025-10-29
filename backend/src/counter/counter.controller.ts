@@ -15,4 +15,9 @@ export class CounterController {
   increment(): CounterState {
     return this.counterService.increment();
   }
+
+  @Get('increment')
+  getAndIncrement(): CounterState {
+    return this.counterService.increment();
+  }
 }

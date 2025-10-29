@@ -10,7 +10,8 @@ export class CounterService {
   private readonly counts: number[] = [];
 
   getState(): CounterState {
-    const current = this.counts.length > 0 ? this.counts[this.counts.length - 1] : 0;
+    const current =
+      this.counts.length > 0 ? this.counts[this.counts.length - 1] : 0;
     return {
       current,
       history: [...this.counts],
@@ -18,7 +19,8 @@ export class CounterService {
   }
 
   increment(): CounterState {
-    const next = (this.counts.length > 0 ? this.counts[this.counts.length - 1] : 0) + 1;
+    const next =
+      (this.counts.length > 0 ? this.counts[this.counts.length - 1] : 0) + 1;
     this.counts.push(next);
     return this.getState();
   }
